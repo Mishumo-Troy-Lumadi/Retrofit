@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/splash_nav"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.devsa.retrofit.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_onboardingFragment"
+            app:destination="@id/onboardingFragment"
+            app:popUpTo="@id/splashFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_accountFragment"
+            app:destination="@id/accountFragment"
+            app:popUpTo="@id/splashFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_homeActivity"
+            app:destination="@id/homeActivity"
+            app:popUpTo="@id/splashFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/onboardingFragment"
+        android:name="com.devsa.retrofit.OnboardingFragment"
+        android:label="fragment_onboarding"
+        tools:layout="@layout/fragment_onboarding" >
+        <action
+            android:id="@+id/action_onboardingFragment_to_accountFragment"
+            app:destination="@id/accountFragment"
+            app:popUpTo="@id/onboardingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="com.devsa.retrofit.AccountFragment"
+        android:label="fragment_account"
+        tools:layout="@layout/fragment_account" >
+        <action
+            android:id="@+id/action_accountFragment_to_validateFragment"
+            app:destination="@id/validateFragment"
+            app:popUpTo="@id/accountFragment" />
+        <action
+            android:id="@+id/action_accountFragment_to_homeActivity"
+            app:destination="@id/homeActivity"
+            app:popUpTo="@id/accountFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/validateFragment"
+        android:name="com.devsa.retrofit.ValidateFragment"
+        android:label="fragment_validate"
+        tools:layout="@layout/fragment_validate" >
+        <action
+            android:id="@+id/action_validateFragment_to_homeActivity"
+            app:destination="@id/homeActivity"
+            app:popUpTo="@id/validateFragment" />
+    </fragment>
+    <activity
+        android:id="@+id/homeActivity"
+        android:name="com.devsa.retrofit.HomeActivity"
+        android:label="activity_home"
+        tools:layout="@layout/activity_home" />
+</navigation>
